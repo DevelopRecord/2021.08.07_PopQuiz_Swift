@@ -111,5 +111,19 @@ class RootController: UIViewController {
         view.backgroundColor = .systemBackground
         
         view.addSubview(quizOne)
+        
+        view.addSubview(yesButton)
+        yesButton.translatesAutoresizingMaskIntoConstraints = false
+        yesButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        yesButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        yesButton.widthAnchor.constraint(equalToConstant: view.frame.width - 235).isActive = true
+        yesButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(noButton)
+        noButton.translatesAutoresizingMaskIntoConstraints = false
+        noButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30).isActive = true
+        noButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        noButton.widthAnchor.constraint(equalToConstant: view.frame.width - 235).isActive = true
+        noButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }
