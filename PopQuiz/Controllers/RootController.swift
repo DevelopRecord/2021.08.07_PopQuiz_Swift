@@ -22,8 +22,9 @@ class RootController: UIViewController {
     let arr: [String?] = ["애니메이션 '이웃집 토토로'에서 \n토토로는 어른에게는 보이지 않는다.", "달걀은 어린 닭이 낳은 것일수록 \n그 크기가 크다.",
                          "무리한 다이어트는 생리불순 및 \n골다공증을 유발할 수 있다.", "꺼벙이란 꿩의 새끼를 뜻한다.",
                          "인질이 인질범들에게 동화되어 \n경찰들을 적대시하는 현상을 가리켜 \n스톡홀름 증후군이라고 한다.", "물고기도 기침을 한다.",
-                         "TV를 가까이서 보면 시력이 나빠진다.", "닭도 왼발잡이, 오른발잡이가 있다.", "만화 '검정 고무신'의 배경시대는 1990년대이다.",
+                         "TV를 가까이서 보면 시력이 나빠진다.", "닭도 왼발잡이, 오른발잡이가 있다.", "만화 '검정 고무신'의 \n배경시대는 1990년대이다.",
                          "다이아몬드는 고온의 열에도 타지 않는다."]
+    var index = 0
     
     // MARK: Properties
     lazy var question: UILabel = {
@@ -32,7 +33,7 @@ class RootController: UIViewController {
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.heavy)
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         return label
     }()
     
@@ -63,18 +64,28 @@ class RootController: UIViewController {
     }()
     
     // MARK: Selectors
-    @objc func yesButtonTapped(_ sender: UIButton) {
+    @objc func yesButtonTapped() {
         
-        if sender.isSelected {
-            question.text = "\(arr[0...9])"
+        if index <= 9 {
+            question.text = arr[index]
+            index = index + 1
+        } else if index > 9 {
+            index = 0
+            question.text = arr[index]
+            index = index + 1
         }
-        
     }
     
     @objc func noButtonTapped() {
-        print("nobtn~~@@")
         
-        question.text = two
+        if index <= 9 {
+            question.text = arr[index]
+            index = index + 1
+        } else if index > 9 {
+            index = 0
+            question.text = arr[index]
+            index = index + 1
+        }
     }
     
     // MARK: Init
