@@ -80,7 +80,6 @@ class RootController: UIViewController {
         pv.progressViewStyle = .default
         pv.progressTintColor = .green
         pv.trackTintColor = .lightGray
-//        pv.progress = 0.0
         pv.layer.cornerRadius = 50
         pv.setProgress(0.0, animated: true)
         return pv
