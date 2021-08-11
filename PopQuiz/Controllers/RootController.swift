@@ -85,8 +85,6 @@ class RootController: UIViewController {
         return pv
     }()
     
-    
-    
     // MARK: Selectors
     @objc func startButtonTapped() {
         startButton.layer.isHidden = true
@@ -136,7 +134,7 @@ class RootController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureViewComponent()
+        configureViewComponent() // view 요소 함수 호출
     }
     
     // MARK: Configure
